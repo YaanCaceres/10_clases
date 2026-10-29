@@ -10,7 +10,9 @@ class Calculadora {
 		}
 		
 	public :
-		Caculadora(): :primero(0), segundo(0){
+		Caculadora(){
+			primero=0;
+			segundo=0;
 		}
 			
 		void setNumeros(float a, float b){
@@ -34,10 +36,10 @@ class Calculadora {
 		double multiplicar() const {
 			return primero * segundo;
 		}
-		bool dividir(double resultado) const {
+		bool dividir(double &resultado) const {
 			if (Comprobar()){
 				resultado=primero/segundo;
-				return true
+				return true;
 			}
 			return false;
 		}
@@ -47,19 +49,19 @@ class Calculadora {
 };
 
 int main (){
-	Calculadora Cal; 
+	Calculadora calc; 
 	float num1,num2; 
 	cin>>num1>>num2; 
 	
-	cacl.setNumeros(num1,num2);
+	calc.setNumeros(num1,num2);
 	cout<<"resultados: "<<endl;
 	cout<<"suma: "<<calc.sumar()<<endl;
 	cout<<"resta: "<<calc.restar()<<endl;
 	cout<<"multiplicacion: "<<calc.multiplicar()<<endl;
 	
-	float ResultadoDivision=0; 
+	double ResultadoDivision=0; 
 	if (calc.dividir(ResultadoDivision)){
-		cout<<"Division"<<ResultadoDivision<<endl;
+		cout<<"Division: "<<ResultadoDivision<<endl;
 	}
 	else{
 		cout<<"error";
